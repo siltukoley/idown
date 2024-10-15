@@ -6,6 +6,11 @@ const getVideoDownloadUrl = async url => {
   return response.data;
 };
 
-export default {
+// export default {
+//   getVideoDownloadUrl: getVideoDownloadUrl
+// };
+const videoUtils = {
   getVideoDownloadUrl: getVideoDownloadUrl
 };
+
+export default videoUtils;
