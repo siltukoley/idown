@@ -27,14 +27,14 @@ app.post("/api/download", async (request, response) => {
   try {
     const getdata = await scrapGql.getInstagramGraphqlData(request.body.url);
     // const videoLink = await getVideo(request.body.url);
-    console.log(getdata);
+    // console.log(getdata);
     const videoLink = getdata.video_url;
     if (videoLink !== undefined) {
       response.json({ downloadLink: videoLink });
-      console.log(`videoLink: ${videoLink}, url: ${request.body.url}`);
+      // console.log(`videoLink: ${videoLink}, url: ${request.body.url}`);
     } else {
       response.json({ error: "The link you have entered is invalid. " });
-      console.log(`videoLink: ${videoLink}, url: ${request.body.url}`);
+      // console.log(`videoLink: ${videoLink}, url: ${request.body.url}`);
     }
   } catch (err) {
     response.json({
