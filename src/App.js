@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet"; // Import Helmet
 import services from "./services";
 import { DisplayVideo } from "./DisplayVideo";
 import "./App.scss";
@@ -45,6 +46,14 @@ function App() {
 
   return (
     <div className="App">
+
+      <Helmet>
+        <title>Instagram Video Downloader</title>
+        <meta name="description" content="Download any video from Instagram easily. Just paste the video URL to get started." />
+        <meta name="keywords" content="Instagram, Video Downloader, Download Videos, Instagram Video" />
+        <meta name="author" content="idown.in" />
+      </Helmet>
+
       <div className="headers">
         <h1>Download any video from Instagram</h1>
         <p>Copy the instagram video URL and paste it below</p>
