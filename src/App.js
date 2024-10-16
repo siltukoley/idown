@@ -9,11 +9,28 @@ function App() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const isValidUrl = (string) => {
+    try {
+      new URL(string);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
   const handleSubmit = async e => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
     setVideoLink("");
+
+    // Validate the URL
+    if (!isValidUrl(url)) {
+      setError("Please enter a valid URL.");
+      setIsLoading(false);
+      return;
+    }
+
     const response = await services.getVideoDownloadUrl(url);
     if (response.error) {
       console.log("error");
@@ -21,6 +38,7 @@ function App() {
       setIsLoading(false);
     } else {
       setVideoLink(response.downloadLink);
+      setUrl(""); // Clear the input field after success
       setIsLoading(false);
     }
   };
