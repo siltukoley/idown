@@ -4,9 +4,9 @@ import styles from "./Navbar.module.css";
 const Navbar = ({ hamActive, setHamActive }) => {
   const logo =
     "/idown_logo.png";
-  const handleClick = () => {
-    setHamActive(!hamActive);
-  };
+  // const handleClick = () => {
+  //   setHamActive(!hamActive);
+  // };
 
   return (
     <nav className={`${styles.navbarWrapper} center`}>
