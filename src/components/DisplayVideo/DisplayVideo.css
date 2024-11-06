@@ -1,0 +1,30 @@
+.videoBox {
+  width: 500px;
+  margin-top: 10px;
+}
+.downloadButton {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.downloadButton:hover {
+  background-color: #0056b3;
+}
+.videoDiv{
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .videoBox {
+    width: 300px;
+    margin-top: 10px;
+  }
+}
