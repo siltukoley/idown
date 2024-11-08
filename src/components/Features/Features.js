@@ -29,7 +29,7 @@ const Features = () => {
           })}
         </div>
       </div>
-      <button className={styles.shopBtn}>Start shopping</button>
+      {/* <button className={styles.shopBtn}>Start shopping</button> */}
     </div>
   );
 };
