@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={`${styles.navbarInner} center`}>
           <div className={`${styles.navLeft}`}>idown</div>
           <div className="center">
-            <a href="/" className={`${styles.navLink}`}>
+            <a href="/contact" className={`${styles.navLink}`}>
             Contact
             </a>
             <a href="/" className={`${styles.navLink}`}>
