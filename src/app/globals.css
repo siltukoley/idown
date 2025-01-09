@@ -33,3 +33,7 @@ li {
   margin: 10px;
   color: #231f20;
 }
+
+::-webkit-scrollbar {
+  display: none; /* Hides scrollbars globally */
+}

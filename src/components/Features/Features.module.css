@@ -12,9 +12,9 @@
   width: 100%;
   overflow: auto;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .featuresList {
   width: 1100px;
