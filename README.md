@@ -1,73 +1,36 @@
-# IG.Download
-
-A React app to download user videos from instagram.
-
-![screenshot](./screenshot.png)
-
-## Built With
-
-- React
-- Node.js
-- Express
-
-## Video Demo
-
-![video-demo](./ig_downloader_demo.gif)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-**To get started, follow the instructions below**
+First, run the development server:
 
-To get a local copy up and running follow these simple example steps.
-
-- Setup and run the API(see the api folder)
-
-For the frontend:
-
-- run
-
-```
-npm install
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-to install all packages. then
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```
-npm start
-```
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-- to start the app in the browser.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Prerequisites
+## Learn More
 
-- Node^8.0
+To learn more about Next.js, take a look at the following resources:
 
-### Automated Tests
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Run automated tests using `npm run test`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Authors
+## Deploy on Vercel
 
-👤 **Adebola**
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- Github: [@githubhandle](https://github.com/onedebos)
-- Twitter: [@twitterhandle](https://twitter.com/debosthefirst)
-- Linkedin: [linkedin](https://www.linkedin.com/in/adebola-niran/)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-Naomi Thomas - @iamnaomithomas on instagram for using her video.
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

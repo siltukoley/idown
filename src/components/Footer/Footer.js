@@ -1,21 +1,24 @@
-import React from "react";
+// components/Footer/Footer.js
+
 import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <nav className={`${styles.navbarWrapper} center`}>
+    <footer className={`${styles.navbarWrapper} center`}>
       <div className={`${styles.navbarColumn} center`}>
         <div className={`${styles.navbarInner} center`}>
-          <div className={`${styles.navLeft}`}>idown</div>
+          <div className={`${styles.navLeft}`}>
+            <a href="https://idown.in">idown</a>
+          </div>
           <div className="center">
             <a href="/contact" className={`${styles.navLink}`}>
-            Contact
+              Contact
             </a>
             <a href="/" className={`${styles.navLink}`}>
               Privacy Policy
             </a>
             <a href="/" className={`${styles.navLink}`}>
-            Terms & Conditions
+              Terms & Conditions
             </a>
           </div>
           <div>
@@ -30,11 +33,7 @@ const Footer = () => {
               </a>
             </span>
             <span>
-              <a
-                href="#instagram"
-                className="fab fa-instagram"
-                style={{ color: "black" }}
-              >
+              <a href="#instagram" className="fab fa-instagram" style={{ color: "black" }}>
                 {" "}
               </a>
             </span>
@@ -44,15 +43,13 @@ const Footer = () => {
               </a>
             </span>
           </div>
-          {/* </div> */}
         </div>
         <div className={`${styles.footerText} center`}>
-          <p>
-            © 2024-2025 idown. All rights reserved.
-          </p>
+          <p>© 2024-2025 idown. All rights reserved.</p>
         </div>
       </div>
-    </nav>
+    </footer>
   );
 };
+
 export default Footer;

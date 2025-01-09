@@ -1,24 +1,32 @@
+/* components/utils/Accordion.module.css */
+
+.accordionWrapper {
+  width: 100%;
+  border-bottom: 1px solid rgba(52, 53, 56, 0.1);
+  padding: 15px 0;
+}
+
 .QuestionBox {
   padding: 25px 0;
   width: 100%;
   color: rgba(52, 53, 56, 0.8);
-  border-bottom: 1px solid rgba(52, 53, 56, 0.1);
 }
 
 .programBoxRes {
   padding: 15px 0;
   width: 100%;
   color: rgba(52, 53, 56, 0.8);
-  border-bottom: 1px solid rgba(52, 53, 56, 0.1);
 }
 
 .questionBoxInner {
+  display: flex;
   justify-content: space-between;
   cursor: pointer;
 }
+
 .question {
-  padding-right: min(300px, 20%);
   font-size: 1.6rem;
+  padding-right: min(300px, 20%);
 }
 
 .programTitle {
@@ -35,8 +43,13 @@
   margin-top: 20px;
   display: none;
 }
+
 .open {
   display: flex;
+}
+
+.sign {
+  font-size: 18px;
 }
 
 @media (max-width: 900px) {

@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
-import "./DisplayVideo.css";
+'use client'; // Ensure this file is treated as a client-side component
 
-export const DisplayVideo = videoLink => {
+import React, { useState, useEffect } from "react";
+import styles from "./DisplayVideo.module.css"; // Correctly import the CSS module
+
+export const DisplayVideo = ({ videoLink }) => {
   const [videoToShow, setVideoToShow] = useState("");
 
   useEffect(() => {
-    setVideoToShow(videoLink);
-    return () => {};
-  }, [videoLink, videoToShow]);
+    if (videoLink) {
+      setVideoToShow(videoLink);
+    }
+  }, [videoLink]);
 
-  const handleDownload = async(videoUrl) => {
+  const handleDownload = async (videoUrl) => {
     const response = await fetch(videoUrl);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
@@ -22,19 +25,29 @@ export const DisplayVideo = videoLink => {
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url); // Clean up
   };
+
   return (
-    <div className="videoDiv">
-      <video
-        controls
-        src={videoToShow.videoLink}
-        type="video/mp4"
-        className="videoBox"
-      ></video>
-      <div>
-      <button onClick={() => handleDownload(videoToShow.videoLink)} className="downloadButton">
-          Download Video
-        </button>
-      </div>
+    <div className={styles.videoDiv}>
+      {videoToShow ? (
+        <>
+          <video
+            controls
+            src={videoToShow}
+            type="video/mp4"
+            className={styles.videoBox}
+          />
+          <div>
+            <button 
+              onClick={() => handleDownload(videoToShow)} 
+              className={styles.downloadButton}
+            >
+              Download Video
+            </button>
+          </div>
+        </>
+      ) : (
+        <p>Loading video...</p> // Show loading message if video is not ready yet
+      )}
     </div>
   );
 };

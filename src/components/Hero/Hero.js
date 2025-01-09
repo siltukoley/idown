@@ -1,10 +1,11 @@
+'use client'; // Marking this file as a client-side component
+
 import React, { useState } from "react";
-import services from "./../../services";
 import styles from "./Hero.module.css";
-import { DisplayVideo } from "./../DisplayVideo/DisplayVideo";
+import { DisplayVideo } from "../DisplayVideo/DisplayVideo";
+import services from "../../services";
 
 const Hero = () => {
-
   const [url, setUrl] = useState("");
   const [videoLink, setVideoLink] = useState("");
   const [error, setError] = useState("");
@@ -19,7 +20,7 @@ const Hero = () => {
     }
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
@@ -34,7 +35,6 @@ const Hero = () => {
 
     const response = await services.getVideoDownloadUrl(url);
     if (response.error) {
-      console.log("error");
       setError("Oops. We couldn't get that video. Sorry!");
       setIsLoading(false);
     } else {
@@ -44,64 +44,52 @@ const Hero = () => {
     }
   };
 
-
   return (
     <div>
-    <div className={`${styles.heroWrapper} center`}>
-      <div className={`${styles.heroInner}`}>
-        <h2 className={styles.headerText}>
-          Instagram Downloader
-        </h2>
-        <div className={styles.slogan}>
-          <p>Copy the instagram video URL and paste it below</p>
+      <div className={`${styles.heroWrapper} center`}>
+        <div className={`${styles.heroInner}`}>
+          <h1 className={styles.headerText}>Instagram Downloader</h1>
+          <div className={styles.slogan}>
+            <p>Copy the instagram video URL and paste it below</p>
+          </div>
+          {error && (
+            <div className={styles.errorWrapper}>
+              <div className={styles.errorDiv}>{error}</div>
+            </div>
+          )}
+          <form className="videoToDownload" onSubmit={handleSubmit}>
+            <div className={styles.inputLocation}>
+              <input
+                type="text"
+                onChange={(e) => setUrl(e.target.value)}
+                name="url"
+                value={url}
+                placeholder="Enter Ig video url here.."
+              />
+            </div>
+            <div>
+              <button type="submit" className={styles.dnldBtn}>
+                Get video
+              </button>
+            </div>
+          </form>
+          {isLoading && (
+            <svg className={styles.spinner} viewBox="0 0 50 50">
+              <circle className={styles.path} cx="25" cy="25" r="20" fill="none" strokeWidth="5"></circle>
+            </svg>
+          )}
         </div>
-        {error ? (
-        <div className={styles.errorWrapper}>
-          <div className={styles.errorDiv}>{error}</div>
-        </div>
-      ) : (
-        ""
-      )}
-        <form className="videoToDownload" onSubmit={e => handleSubmit(e)}>
-        <div className={styles.inputLocation}>
-          <input type="text" onChange={e => setUrl(e.target.value)} name="url"
-          value={url} placeholder="Enter Ig video url here.." />
-        </div>
-        <div>
-          <button type="submit" className={styles.dnldBtn}>
-            Get video
-          </button>
-        </div>
-        </form>
-        {isLoading ? (
-        <svg className={styles.spinner} viewBox="0 0 50 50">
-          <circle
-            className={styles.path}
-            cx="25"
-            cy="25"
-            r="20"
-            fill="none"
-            strokeWidth="5"
-          ></circle>
-        </svg>
-      ) : (
-        ""
-      )}
       </div>
-    </div>
-    {videoLink ? (
+      {videoLink && (
         <div className={styles.saveInstructionWrapper}>
           <div className={styles.saveInstruction}>
-            {" "}
-            Click on the <strong>'Download video'</strong> to
-            save the video.{" "}
+            Click on the <strong>'Download video'</strong> to save the video.
           </div>
         </div>
-      ) : (
-        ""
       )}
-      {videoLink ? <DisplayVideo videoLink={videoLink} /> : ""}
+      {videoLink && <DisplayVideo videoLink={videoLink} />}
     </div>
   );
 };
+
 export default Hero;

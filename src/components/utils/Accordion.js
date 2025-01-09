@@ -1,3 +1,5 @@
+'use client'; // Marking the file as a client component
+
 import { useState } from "react";
 import styles from "./Accordion.module.css";
 import ProgramsList from "../Programs/ProgramsList";

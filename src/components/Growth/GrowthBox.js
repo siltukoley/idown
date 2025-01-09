@@ -1,3 +1,5 @@
+'use client'; // Marking this file as a client-side component
+
 import { Fragment, useState } from "react";
 import styles from "./Growth.module.css";
 
