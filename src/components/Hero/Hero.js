@@ -49,9 +49,9 @@ const Hero = () => {
     <div>
     <div className={`${styles.heroWrapper} center`}>
       <div className={`${styles.heroInner}`}>
-        <h2 className={styles.headerText}>
+        <h1 className={styles.headerText}>
           Instagram Downloader
-        </h2>
+        </h1>
         <div className={styles.slogan}>
           <p>Copy the instagram video URL and paste it below</p>
         </div>

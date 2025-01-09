@@ -1,5 +1,5 @@
 {
-  "name": "instacart",
+  "name": "idown",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.7",
     "bootstrap": "^5.2.3",
+    "express": "^4.21.2",
     "flag-icon-css": "^4.1.7",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
@@ -38,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3"
   }
 }

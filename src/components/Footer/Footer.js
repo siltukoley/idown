@@ -6,7 +6,7 @@ const Footer = () => {
     <nav className={`${styles.navbarWrapper} center`}>
       <div className={`${styles.navbarColumn} center`}>
         <div className={`${styles.navbarInner} center`}>
-          <div className={`${styles.navLeft}`}>idown</div>
+          <div className={`${styles.navLeft}`}><a href="https://idown.in">idown</a></div>
           <div className="center">
             <a href="/contact" className={`${styles.navLink}`}>
             Contact

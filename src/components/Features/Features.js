@@ -6,7 +6,8 @@ const Features = () => {
   return (
     <div className={`${styles.featuresWrapper} center`}>
       <div className={styles.featuresHeading}>
-        <p>How to download from instagram?</p>
+        <h2>Instagram video downloader</h2>
+        <p>How to use Instagram video downloader?</p>
       </div>
       <div className={`${styles.featuresListWrapper} center`}>
         <div className={`${styles.featuresList} center`}>
